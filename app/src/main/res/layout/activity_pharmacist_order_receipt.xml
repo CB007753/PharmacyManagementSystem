@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PharmacistOrderReceiptActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="555dp"
+        android:src="@drawable/happy" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="470dp"
+        android:gravity="center"
+        android:text="Order Has Been Placed Successfully!"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="144dp"
+        android:layout_marginBottom="416dp"
+        android:gravity="center"
+        android:text="Order Details"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="189dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="199dp"
+        android:layout_marginBottom="358dp"
+        android:gravity="center"
+        android:text="Drug Name:"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/order_details_drug_name"
+        android:layout_width="189dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="358dp"
+        android:gravity="center"
+        android:text="drug name"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="189dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="198dp"
+        android:layout_marginBottom="322dp"
+        android:gravity="center"
+        android:text="Quantity:"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/order_details_drug_qnty"
+        android:layout_width="189dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="7dp"
+        android:layout_marginBottom="323dp"
+        android:gravity="center"
+        android:text="qnty"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="189dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="198dp"
+        android:layout_marginBottom="285dp"
+        android:gravity="center"
+        android:text="Service/Delivery Charge:"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="189dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="286dp"
+        android:gravity="center"
+        android:text="Rs.100.00"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="189dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="199dp"
+        android:layout_marginBottom="251dp"
+        android:gravity="center"
+        android:text="Total:"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/order_details_drug_total"
+        android:layout_width="189dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="253dp"
+        android:gravity="center"
+        android:text="total"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="189dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="103dp"
+        android:layout_marginBottom="217dp"
+        android:gravity="center"
+        android:text="Delivery Address:"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/order_details_drug_address"
+        android:layout_width="188dp"
+        android:layout_height="46dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="107dp"
+        android:layout_marginBottom="166dp"
+        android:gravity="center"
+        android:text="address"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="285dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="57dp"
+        android:layout_marginBottom="106dp"
+        android:gravity="center"
+        android:text="Estimated Delivery Time: 10-20 Minutes"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="285dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="56dp"
+        android:layout_marginBottom="59dp"
+        android:gravity="center"
+        android:text="Thank You!"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/order_details_return_home_button"
+        android:layout_width="197dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="99dp"
+        android:layout_marginBottom="7dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#00BFFF"
+        android:text="Home"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+
+</RelativeLayout>

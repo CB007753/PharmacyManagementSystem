@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.pharmacy_management_system">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Pharmacy_Management_System">
+
+        <activity
+            android:name=".PharmacistUpdateOrderActivity"
+            android:label="Delivery Confirmation"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".PharmacistOrderHistoryActivity"
+            android:label="Order History"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PharmacistOntheWayOrdersActivity"
+            android:label="On The Way Orders"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".PharmacistOrderReceiptActivity" />
+
+        <activity
+            android:name=".PharmacistContactActivity"
+            android:label="Contact Admin"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PharmacistCheckoutActivity"
+            android:label="Billing Information"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PharmacistViewOrdersActivity"
+            android:label="New Orders"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PharmacistHomeActivity"
+            android:label="Pharmacy Management System"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

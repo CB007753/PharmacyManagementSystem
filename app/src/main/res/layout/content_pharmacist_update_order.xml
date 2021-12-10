@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+    <TextView
+        android:id="@+id/reachedtextview"
+        android:layout_width="380dp"
+        android:layout_height="77dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="591dp"
+        android:gravity="center"
+        android:text="Did You Receive Your Parcel?"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/update_order_button"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="87dp"
+        android:layout_marginBottom="482dp"
+        android:backgroundTint="#00BFFF"
+        android:text="Confirm Received"
+        android:textColor="#fff"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/correct_image_view"
+        android:layout_width="299dp"
+        android:layout_height="349dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="61dp"
+        android:layout_marginBottom="216dp" />
+
+    <TextView
+        android:id="@+id/updated_text_view"
+        android:layout_width="380dp"
+        android:layout_height="77dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="115dp"
+        android:gravity="center"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/update_order_home_button"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="87dp"
+        android:layout_marginBottom="41dp"
+        android:backgroundTint="#00FF7F"
+        android:text="Back to Home"
+        android:textColor="#fff"
+        android:textStyle="bold|italic" />
+
+</RelativeLayout>
