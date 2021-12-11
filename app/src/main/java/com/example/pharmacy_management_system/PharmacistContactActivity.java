@@ -44,7 +44,7 @@ public class PharmacistContactActivity extends AppCompatActivity implements Navi
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // using onCreateOptionsMenu() to specify the options menu for an activity
         getMenuInflater().inflate(R.menu.pharmacist_contact, menu);
         return true;
     }
