@@ -1,6 +1,75 @@
 package com.example.pharmacy_management_system;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
-public class PharmacistHomeActivity extends AppCompatActivity {
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import Model.Drugs;
+
+//implementing nav view to use "onNavigationItemSelected" methods to add navigations for menu items
+public class PharmacistHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private List<Drugs> drugList=new ArrayList<>();
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pharmacist_home);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        drawer = findViewById(R.id.drawer_layout);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigationDrawerOpen, R.string.navigationDrawerClose);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.pharmacist_contact, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.navigation_orders:
+                startActivity(new Intent(PharmacistHomeActivity.this,PharmacistViewOrdersActivity.class).putExtra("email",getIntent().getStringExtra("email")));
+                break;
+            case R.id.navigation_contact:
+                startActivity(new Intent(PharmacistHomeActivity.this,PharmacistContactActivity.class).putExtra("email",getIntent().getStringExtra("email")));
+                break;
+            case R.id.navigation_ontheway_orders:
+                startActivity(new Intent(PharmacistHomeActivity.this,PharmacistOntheWayOrdersActivity.class).putExtra("email",getIntent().getStringExtra("email")));
+                break;
+            case R.id.navigation_completed_orders:
+                startActivity(new Intent(PharmacistHomeActivity.this,PharmacistOrderHistoryActivity.class).putExtra("email",getIntent().getStringExtra("email")));
+                break;
+            case R.id.navigation_logout:
+                startActivity(new Intent(PharmacistHomeActivity.this,LoginActivity.class));
+                break;
+        }
+        return false;
+    }
 }

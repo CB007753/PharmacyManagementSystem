@@ -89,7 +89,7 @@
         android:layout_marginRight="97dp"
         android:layout_marginBottom="84dp"
         android:gravity="center"
-        android:text="Don't have an Account?"
+        android:text="Don't Have An Account?"
         android:textAlignment="center"
         android:textSize="14sp"
         android:textStyle="bold|italic" />
