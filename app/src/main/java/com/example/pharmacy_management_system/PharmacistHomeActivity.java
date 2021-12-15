@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -12,23 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.pharmacy_management_system.Client.API_Interface;
-import com.example.pharmacy_management_system.Client.API_Model;
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 //implementing nav view to use "onNavigationItemSelected" methods to add navigations for menu items
 public class PharmacistHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
    // private List<Drugs> drugList=new ArrayList<>();
-    private TextView textViewResult;
+    //private TextView textViewResult;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,44 +26,44 @@ public class PharmacistHomeActivity extends AppCompatActivity implements Navigat
 
         //-----------------------------------
 
-        textViewResult = findViewById(R.id.text_view_result);
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        API_Interface api_interface = retrofit.create(API_Interface.class);
-
-        Call<List<API_Model>> call = api_interface.getPosts();
-
-        call.enqueue(new Callback<List<API_Model>>() {
-            @Override
-            public void onResponse(Call<List<API_Model>> call, Response<List<API_Model>> response) {
-                if(!response.isSuccessful()){
-                    textViewResult.setText("Code: " + response.code());
-                    return;
-                }
-
-                List<API_Model> posts = response.body();
-
-                for (API_Model post : posts){
-                    String content ="";
-                    content += "ID: " + post.getId() + "\n";
-                    content += "User ID: " + post.getUserId() + "\n";
-                    content += "Title: " + post.getTitle() + "\n";
-                    content += "Text: " + post.getText() + "\n\n";
-
-                    textViewResult.append(content);
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<API_Model>> call, Throwable t) {
-                        textViewResult.setText(t.getMessage());
-            }
-        });
+//        textViewResult = findViewById(R.id.text_view_result);
+//
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("https://jsonplaceholder.typicode.com/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//
+//        API_Interface api_interface = retrofit.create(API_Interface.class);
+//
+//        Call<List<API_Model>> call = api_interface.getPosts();
+//
+//        call.enqueue(new Callback<List<API_Model>>() {
+//            @Override
+//            public void onResponse(Call<List<API_Model>> call, Response<List<API_Model>> response) {
+//                if(!response.isSuccessful()){
+//                    textViewResult.setText("Code: " + response.code());
+//                    return;
+//                }
+//
+//                List<API_Model> posts = response.body();
+//
+//                for (API_Model post : posts){
+//                    String content ="";
+//                    content += "ID: " + post.getId() + "\n";
+//                    content += "User ID: " + post.getUserId() + "\n";
+//                    content += "Title: " + post.getTitle() + "\n";
+//                    content += "Text: " + post.getText() + "\n\n";
+//
+//                    textViewResult.append(content);
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<API_Model>> call, Throwable t) {
+//                        textViewResult.setText(t.getMessage());
+//            }
+//        });
 
         //------------------------------------------
 

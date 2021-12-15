@@ -5,33 +5,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     >
-<androidx.core.widget.NestedScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<!--<androidx.core.widget.NestedScrollView-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
 
 
-    <TextView
-        android:id="@+id/text_view_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="645dp"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textStyle="bold"></TextView>
-
-</androidx.core.widget.NestedScrollView>
-<!--    <GridView-->
-<!--        android:id="@+id/pharmacist_menu_gridview"-->
-<!--        android:layout_width="match_parent"-->
+<!--    <TextView-->
+<!--        android:id="@+id/text_view_result"-->
+<!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:numColumns="1" />-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginRight="0dp"-->
+<!--        android:layout_marginBottom="645dp"-->
+<!--        android:gravity="center"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="#000"-->
+<!--        android:textStyle="bold"></TextView>-->
+<!--</androidx.core.widget.NestedScrollView>-->
+
+    <GridView
+        android:id="@+id/pharmacist_menu_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="1" />
 </RelativeLayout>
 
     <!--This is the page where the
