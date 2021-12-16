@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         register_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(LoginActivity.this,PharmacistHomeActivity.class);
+                Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
             }
         });
