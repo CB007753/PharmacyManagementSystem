@@ -1,6 +1,6 @@
 package com.example.pharmacy_management_system.Model;
 
-//this DTO file is used for registration purpose
+//this DTO(data transfer object) file is used for registration purpose
 public class RegistrationDTO {
 
     private String fullname;

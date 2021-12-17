@@ -1,5 +1,5 @@
 package com.example.pharmacy_management_system.Model;
-//DTO is a design pattern conceived to reduce the number of calls when working with remote interfaces
+//DTO(data transfer object) is a design pattern conceived to reduce the number of calls when working with remote interfaces
 
 public class ContactDTO {
 
