@@ -23,25 +23,25 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/drug_quantity"
+            android:id="@+id/drug_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="60dp"
             android:gravity="center"
-            android:text="Quantity"
+            android:text="Unit"
             android:textAlignment="center"
             android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/drug_unit"
+            android:id="@+id/drug_qnty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="90dp"
             android:gravity="center"
-            android:text="Unit"
+            android:text="Quantity"
             android:textAlignment="center"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -57,6 +57,17 @@
             android:textAlignment="center"
             android:textColor="#000"
             android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/drug_seperator"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            android:backgroundTint="#00BFFF"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:textStyle="italic" />
 
 
     </RelativeLayout>

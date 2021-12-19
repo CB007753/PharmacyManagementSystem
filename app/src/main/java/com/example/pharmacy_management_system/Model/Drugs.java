@@ -13,9 +13,9 @@ public class Drugs {
     @Expose
     private String name;
 
-    @SerializedName("image")
+    @SerializedName("unit")
     @Expose
-    private String image;
+    private String unit;
 
     @SerializedName("description")
     @Expose
@@ -29,18 +29,18 @@ public class Drugs {
 
 //Constructors
 
-    public Drugs(String id, String name, String image, String description, int price) {
+    public Drugs(String id, String name, String unit, String description, int price) {
         this.id = id;
         this.name = name;
-        this.image = image;
+        this.unit = unit;
         this.description = description;
         this.price = price;
     }
 
-    public Drugs(String id, String name, String image) {
+    public Drugs(String id, String name, String unit) {
         this.id = id;
         this.name = name;
-        this.image = image;
+        this.unit = unit;
     }
 
     public Drugs() {
@@ -65,12 +65,12 @@ public class Drugs {
         this.name = name;
     }
 
-    public String getImage() {
-        return image;
+    public String getUnit() {
+        return unit;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 
     public String getDescription() {
