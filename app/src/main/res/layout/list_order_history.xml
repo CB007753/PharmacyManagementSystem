@@ -75,7 +75,7 @@
             android:layout_marginTop="60dp"
             android:layout_marginBottom="162dp"
             android:gravity="center"
-            android:text="Quantity:"
+            android:text="Unit:"
             android:textAlignment="center"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -88,12 +88,42 @@
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="60dp"
-            android:layout_marginRight="216dp"
-            android:layout_marginBottom="160dp"
+            android:layout_marginRight="304dp"
+            android:layout_marginBottom="162dp"
             android:gravity="center"
             android:text="unit"
             android:textAlignment="center"
             android:textSize="18dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="85dp"
+            android:gravity="center"
+            android:text="Quantity:"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/drug_qnty_order_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="257dp"
+            android:layout_marginBottom="85dp"
+            android:gravity="center"
+            android:text="quantity"
+            android:textAlignment="center"
+            android:textSize="18dp" />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -102,8 +132,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="60dp"
-            android:layout_marginRight="117dp"
-            android:layout_marginBottom="163dp"
+            android:layout_marginRight="125dp"
+            android:layout_marginBottom="81dp"
             android:gravity="center"
             android:text="Total:"
             android:textAlignment="center"
@@ -119,15 +149,11 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="60dp"
             android:layout_marginRight="12dp"
-            android:layout_marginBottom="162dp"
+            android:layout_marginBottom="83dp"
             android:gravity="center"
             android:text="500.00"
             android:textAlignment="center"
             android:textSize="18dp" />
-
-
-
-
 
         <TextView
             android:layout_width="wrap_content"

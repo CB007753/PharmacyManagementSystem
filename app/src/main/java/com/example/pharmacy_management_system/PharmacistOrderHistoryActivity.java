@@ -19,7 +19,7 @@ public class PharmacistOrderHistoryActivity extends AppCompatActivity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pharmacist_checkout);
+        setContentView(R.layout.activity_pharmacist_order_history);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -14,3 +14,6 @@
         android:layout_height="wrap_content"
         android:numColumns="1" />
 </RelativeLayout>
+
+<!--this is where the drugs will be listed
+which can be bought by the pharmacist.-->

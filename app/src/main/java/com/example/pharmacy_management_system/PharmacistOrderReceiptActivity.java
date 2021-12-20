@@ -2,69 +2,63 @@ package com.example.pharmacy_management_system;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.google.android.material.navigation.NavigationView;
+//this will be a receipt viewing page so navigation menu and app bar are not displayed
+public class PharmacistOrderReceiptActivity extends AppCompatActivity {
 
-public class PharmacistOrderReceiptActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-
+    private TextView drugnametextview,totaltextview,qntytextview,unittextview,emailtextview;
+    private Button home_Btn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pharmacist_checkout);
+        setContentView(R.layout.activity_pharmacist_order_receipt);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        drawer = findViewById(R.id.drawer_layout);
-        navigationView.setNavigationItemSelectedListener(this);
+        final Intent intent=getIntent();
+        final String drug_name=intent.getStringExtra("drugname");
+        final String email=intent.getStringExtra("email");
+        final String unit=intent.getStringExtra("unit");
+        final  int total=intent.getIntExtra("total",0);
+        final int quantity=intent.getIntExtra("qnty",0);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigationDrawerOpen, R.string.navigationDrawerClose);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        drugnametextview = (TextView) findViewById(R.id.order_details_drug_name);
+        unittextview = (TextView) findViewById(R.id.order_details_drug_unit);
+        totaltextview = (TextView) findViewById(R.id.order_details_drug_total);
+        qntytextview = (TextView) findViewById(R.id.order_details_drug_qnty);
+        emailtextview = (TextView) findViewById(R.id.order_details_drug_email) ;
+
+        home_Btn = (Button) findViewById(R.id.order_details_return_home_button);
+
+        String drug_total = String.valueOf(total);
+        String drug_qnty = String.valueOf(quantity);
+
+
+        //setting the values retrieved from the last activity(checkout actvity)
+        drugnametextview.setText(drug_name);
+        unittextview.setText(unit);
+        totaltextview.setText(drug_total);
+        qntytextview.setText(drug_qnty);
+        emailtextview.setText(email);
+
+
+            home_Btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent=new Intent(PharmacistOrderReceiptActivity.this,PharmacistHomeActivity.class);
+                    intent.putExtra("email",email);
+                    startActivity(intent);
+
+                }
+            });
+
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // using onCreateOptionsMenu() to specify the options menu for an activity
-        getMenuInflater().inflate(R.menu.pharmacist_contact, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item)
-    {
-        switch (item.getItemId())
-        {
-            case R.id.navigation_home:
-                startActivity(new Intent(PharmacistOrderReceiptActivity.this,PharmacistHomeActivity.class).putExtra("email",getIntent().getStringExtra("email")));
-                break;
-            case R.id.navigation_orders:
-                startActivity(new Intent(PharmacistOrderReceiptActivity.this,PharmacistViewOrdersActivity.class).putExtra("email",getIntent().getStringExtra("email")));
-                break;
-            case R.id.navigation_contact:
-                startActivity(new Intent(PharmacistOrderReceiptActivity.this,PharmacistContactActivity.class).putExtra("email",getIntent().getStringExtra("email")));
-                break;
-            case R.id.navigation_ontheway_orders:
-                startActivity(new Intent(PharmacistOrderReceiptActivity.this,PharmacistOntheWayOrdersActivity.class).putExtra("email",getIntent().getStringExtra("email")));
-                break;
-            case R.id.navigation_completed_orders:
-                startActivity(new Intent(PharmacistOrderReceiptActivity.this,PharmacistOrderHistoryActivity.class).putExtra("email",getIntent().getStringExtra("email")));
-                break;
-            case R.id.navigation_logout:
-                startActivity(new Intent(PharmacistOrderReceiptActivity.this,LoginActivity.class));
-                break;
-        }
-        return false;
-    }
 }

@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else if (reg_password.length()<8)
                 {
-                    Toast.makeText(RegisterActivity.this, "Password Should Be More Than 8 Characters", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "Password Should Be 8 Characters", Toast.LENGTH_LONG).show();
                 }
                 else if (reg_contact.length()<10 || reg_contact.length()>10)
                 {

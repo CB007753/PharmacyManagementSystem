@@ -38,11 +38,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PharmacistCheckoutActivity"
-            android:label="Billing Information"
+            android:label="Checkout"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PharmacistViewOrdersActivity"
-            android:label="New Orders"
+            android:label="Buy Drugs"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PharmacistHomeActivity"

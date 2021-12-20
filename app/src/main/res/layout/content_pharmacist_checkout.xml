@@ -8,10 +8,111 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/customer_onthe_way_orders_view"
+    <TextView
+        android:id="@+id/drug_name_checkout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="1"/>
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="580dp"
+        android:gravity="center"
+        android:text="Drug Name"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/drug_desc_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="530dp"
+        android:gravity="center"
+        android:text="description"
+        android:textAlignment="center"
+        android:textStyle="italic" />
+    <TextView
+        android:id="@+id/drug_unit_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="430dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:text="Unit"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/drug_price_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="390dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:text="RS.500"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="330dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:text="Current Pharmacist:"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/drug_email_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="290dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:text="Pharmacist"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textStyle="italic" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="566dp"
+        android:layout_marginTop="200dp">
+
+
+        <EditText
+            android:id="@+id/drug_qnty_edit_text"
+            android:layout_width="326dp"
+            android:layout_height="37dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="104dp"
+            android:background="@drawable/shapes"
+            android:gravity="center"
+            android:hint="Quantity (Max 99)"
+            android:inputType="number"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/place_order_btn"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="107dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#00BFFF"
+            android:text="Place Order"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+
+
+    </RelativeLayout>
 </RelativeLayout>
