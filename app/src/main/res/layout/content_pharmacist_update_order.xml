@@ -9,18 +9,18 @@
     >
 
     <TextView
-        android:id="@+id/reachedtextview"
+        android:id="@+id/delivered_textview"
         android:layout_width="380dp"
         android:layout_height="77dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="591dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="658dp"
         android:gravity="center"
-        android:text="Did You Receive Your Parcel?"
+        android:text="Is This Order Delivered ?"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="20dp"
+        android:textSize="22dp"
         android:textStyle="bold" />
 
     <Button
@@ -29,20 +29,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="87dp"
-        android:layout_marginBottom="482dp"
+        android:layout_marginRight="93dp"
+        android:layout_marginBottom="573dp"
         android:backgroundTint="#00BFFF"
-        android:text="Confirm Received"
+        android:text="Confirm Delivered"
         android:textColor="#fff"
         android:textStyle="bold|italic" />
 
     <ImageView
-        android:id="@+id/correct_image_view"
-        android:layout_width="299dp"
+        android:id="@+id/updated_image_view"
+        android:layout_width="320dp"
         android:layout_height="349dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="61dp"
+        android:layout_marginRight="56dp"
         android:layout_marginBottom="216dp" />
 
     <TextView

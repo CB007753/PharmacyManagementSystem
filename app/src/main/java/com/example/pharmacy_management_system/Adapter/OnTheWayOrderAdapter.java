@@ -76,12 +76,12 @@ public class OnTheWayOrderAdapter extends RecyclerView.Adapter<OnTheWayOrderAdap
 
                 //takes the retrieved order details to update activity page so they can be updated from there.(like confirmation page for update),Note: all details are sent in case of any need of all details
                 intent.putExtra("drugname",order_name);
-                intent.putExtra("drugprice",order_price);
-                intent.putExtra("total",order_total);
-                intent.putExtra("qnty",String.valueOf(orderList.get(position).getQuantity()));
+                intent.putExtra("drugprice",Integer.parseInt(order_price));
+                intent.putExtra("total",Integer.parseInt(order_total));
+                intent.putExtra("qnty",orderList.get(position).getQuantity());
                 intent.putExtra("email",order_email);
                 intent.putExtra("unit",order_unit);
-                intent.putExtra("id",String.valueOf(orderList.get(position).getId()));
+                intent.putExtra("id",orderList.get(position).getId());
                 intent.putExtra("status",order_status);
                 intent.putExtra("date",order_date);
 

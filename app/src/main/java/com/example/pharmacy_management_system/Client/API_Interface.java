@@ -40,5 +40,9 @@ public interface API_Interface {
     @GET("User/deliveredorders/{email}/{status}")
     Call<List<Order>> ViewDeliveredOrders(@Path("email")String username,@Path("status")String status);
 
+    @POST("User/updateorder")
+    Call<Void> update_Order(@Body Order order);
+
+
 
 }

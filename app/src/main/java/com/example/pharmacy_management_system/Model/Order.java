@@ -2,7 +2,7 @@ package com.example.pharmacy_management_system.Model;
 
 public class Order {
 
-    private String id;
+    private int id;
 
     private String email;
 
@@ -23,7 +23,7 @@ public class Order {
 
     //Constructors
 
-    public Order(String id, String email, String date, String drugname, int price, int quantity, String unit, String status, int total) {
+    public Order(int id, String email, String date, String drugname, int price, int quantity, String unit, String status, int total) {
         this.id = id;
         this.email = email;
         this.date = date;
@@ -35,7 +35,7 @@ public class Order {
         this.total = total;
     }
 
-    public Order(String id, String drugname, int quantity, String unit, String status, int total) {
+    public Order(int id, String drugname, int quantity, String unit, String status, int total) {
         this.id = id;
         this.drugname = drugname;
         this.quantity = quantity;
@@ -50,11 +50,11 @@ public class Order {
 
     //Getters and setters
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
