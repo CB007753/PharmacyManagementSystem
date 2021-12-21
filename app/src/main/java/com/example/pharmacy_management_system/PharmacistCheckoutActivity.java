@@ -92,7 +92,7 @@ public class PharmacistCheckoutActivity extends AppCompatActivity implements Nav
 
                 if(drugqnty.getText().toString().isEmpty()){
 
-                    Toast.makeText(PharmacistCheckoutActivity.this, "Drug Quantity cannot be empty", Toast.LENGTH_LONG).show();
+                    Toast.makeText(PharmacistCheckoutActivity.this, "Quantity cannot be empty", Toast.LENGTH_LONG).show();
 
                 }
                 else if(drugqnty.length()>2) {
@@ -105,21 +105,19 @@ public class PharmacistCheckoutActivity extends AppCompatActivity implements Nav
                     orderDTO.setEmail(email);
                     orderDTO.setDrugname(drug_name);
                     orderDTO.setDate(Date_Time);
-                    orderDTO.setStatus("On The Way");
+                    orderDTO.setStatus("On The Way");//this will be changed to delivered once the pharmacist checks and updates the order status
                     orderDTO.setUnit(drug_unit);
 
                      final int drug_Qnty = Integer.parseInt(drugqnty.getText().toString());
+
+                        //--quantity not getting added to the database, should check later--
+                           orderDTO.setQuantity(drug_Qnty);
 
 
                     //calculating the total price by multplying 1 item price with number of quantity selected and adding rs.100 which is delivery fees
                     final int Total = (price*drug_Qnty)+100;
                     orderDTO.setTotal(Total);
                     orderDTO.setPrice(price);
-
-
-
-                    //--quantity not getting added to the database, should check later--
-                    orderDTO.setQuantity(drug_Qnty);
 
 
 
