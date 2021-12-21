@@ -35,7 +35,7 @@ public class PharmacistUpdateOrderActivity extends AppCompatActivity implements 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // using onCreateOptionsMenu() to specify the options menu for an activity
-        getMenuInflater().inflate(R.menu.pharmacist_contact, menu);
+        getMenuInflater().inflate(R.menu.pharmacist_home, menu);
         return true;
     }
 

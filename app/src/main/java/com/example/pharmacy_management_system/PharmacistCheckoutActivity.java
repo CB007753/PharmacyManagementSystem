@@ -96,7 +96,13 @@ public class PharmacistCheckoutActivity extends AppCompatActivity implements Nav
 
                 }
                 else if(drugqnty.length()>2) {
+
                     Toast.makeText(PharmacistCheckoutActivity.this, "Quantity Must Be Below 100", Toast.LENGTH_LONG).show();
+                }
+                else if(Integer.parseInt(drugqnty.getText().toString()) == 0){
+
+                    Toast.makeText(PharmacistCheckoutActivity.this, "Quantity Cannot Be 0", Toast.LENGTH_LONG).show();
+
                 }
                 else {
 
@@ -108,14 +114,14 @@ public class PharmacistCheckoutActivity extends AppCompatActivity implements Nav
                     orderDTO.setStatus("On The Way");//this will be changed to delivered once the pharmacist checks and updates the order status
                     orderDTO.setUnit(drug_unit);
 
-                     final int drug_Qnty = Integer.parseInt(drugqnty.getText().toString());
+                     //final int drug_Qnty = Integer.parseInt(drugqnty.getText().toString());
 
                         //--quantity not getting added to the database, should check later--
-                           orderDTO.setQuantity(drug_Qnty);
+                           orderDTO.setQuantity(Integer.parseInt(drugqnty.getText().toString()));
 
 
                     //calculating the total price by multplying 1 item price with number of quantity selected and adding rs.100 which is delivery fees
-                    final int Total = (price*drug_Qnty)+100;
+                    final int Total = (price*(Integer.parseInt(drugqnty.getText().toString())))+100;
                     orderDTO.setTotal(Total);
                     orderDTO.setPrice(price);
 
@@ -131,7 +137,7 @@ public class PharmacistCheckoutActivity extends AppCompatActivity implements Nav
                             Toast.makeText(PharmacistCheckoutActivity.this, "Order Placed Successfully", Toast.LENGTH_LONG).show();
                             Intent intent= new Intent(PharmacistCheckoutActivity.this,PharmacistOrderReceiptActivity.class);
                             intent.putExtra("drugname",drug_name);
-                            intent.putExtra("qnty",drug_Qnty);
+                            intent.putExtra("qnty",Integer.parseInt(drugqnty.getText().toString()));
                             intent.putExtra("total",Total);
                             intent.putExtra("email",email);
                             intent.putExtra("unit",drug_unit);
@@ -157,7 +163,7 @@ public class PharmacistCheckoutActivity extends AppCompatActivity implements Nav
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // using onCreateOptionsMenu() to specify the options menu for an activity
-        getMenuInflater().inflate(R.menu.pharmacist_contact, menu);
+        getMenuInflater().inflate(R.menu.pharmacist_home, menu);
         return true;
     }
 

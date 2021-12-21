@@ -9,7 +9,7 @@
     >
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/customer_onthe_way_orders_view"
+        android:id="@+id/pharmacist_ontheway_orders_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:numColumns="1"/>

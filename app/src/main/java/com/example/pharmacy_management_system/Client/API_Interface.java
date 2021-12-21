@@ -3,6 +3,7 @@ package com.example.pharmacy_management_system.Client;
 import com.example.pharmacy_management_system.JsonResponse.LoginRespo;
 import com.example.pharmacy_management_system.Model.BuyDrugs;
 import com.example.pharmacy_management_system.Model.Drugs;
+import com.example.pharmacy_management_system.Model.Order;
 import com.example.pharmacy_management_system.Model.OrderDTO;
 import com.example.pharmacy_management_system.Model.RegistrationDTO;
 
@@ -32,6 +33,12 @@ public interface API_Interface {
 
     @POST("User/placeorder")
     Call<Void> PlaceOrder(@Body OrderDTO orderDTO);
+
+    @GET("User/onthewayorders/{email}/{status}")
+    Call<List<Order>> ViewOnTheWayOrders(@Path("email")String username, @Path("status")String status);
+
+    @GET("User/deliveredorders/{email}/{status}")
+    Call<List<Order>> ViewDeliveredOrders(@Path("email")String username,@Path("status")String status);
 
 
 }
