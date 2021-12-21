@@ -33,7 +33,7 @@ public class PharmacistOntheWayOrdersActivity extends AppCompatActivity implemen
 
     ArrayList<Order> orderList=new ArrayList<>();
     private RecyclerView recyclerView;
-    private OnTheWayOrderAdapter onTheWayOrderAdatper;
+    private OnTheWayOrderAdapter onTheWayOrderAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,8 +59,8 @@ public class PharmacistOntheWayOrdersActivity extends AppCompatActivity implemen
                     Toast.makeText(PharmacistOntheWayOrdersActivity.this,"On The Way Orders Displayed Successfully!",Toast.LENGTH_LONG).show();
 
                     orderList= new ArrayList<>(response.body());
-                    onTheWayOrderAdatper=new OnTheWayOrderAdapter(orderList,PharmacistOntheWayOrdersActivity.this);
-                    recyclerView.setAdapter(onTheWayOrderAdatper);
+                    onTheWayOrderAdapter =new OnTheWayOrderAdapter(orderList,PharmacistOntheWayOrdersActivity.this);
+                    recyclerView.setAdapter(onTheWayOrderAdapter);
 
                 }
                 catch(Exception e)
