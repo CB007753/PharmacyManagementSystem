@@ -95,13 +95,13 @@ public class PharmacistCheckoutActivity extends AppCompatActivity implements Nav
                     Toast.makeText(PharmacistCheckoutActivity.this, "Quantity cannot be empty", Toast.LENGTH_LONG).show();
 
                 }
-                else if(drugqnty.length()>2) {
+                else if(Integer.parseInt(drugqnty.getText().toString()) > 100) {
 
-                    Toast.makeText(PharmacistCheckoutActivity.this, "Quantity Must Be Below 100", Toast.LENGTH_LONG).show();
+                    Toast.makeText(PharmacistCheckoutActivity.this, "Quantity Must Be Below Or Equal to 100", Toast.LENGTH_LONG).show();
                 }
-                else if(Integer.parseInt(drugqnty.getText().toString()) == 0){
+                else if(Integer.parseInt(drugqnty.getText().toString()) < 10){
 
-                    Toast.makeText(PharmacistCheckoutActivity.this, "Quantity Cannot Be 0", Toast.LENGTH_LONG).show();
+                    Toast.makeText(PharmacistCheckoutActivity.this, "Quantity Must Be Above Or Equal to 10", Toast.LENGTH_LONG).show();
 
                 }
                 else {
