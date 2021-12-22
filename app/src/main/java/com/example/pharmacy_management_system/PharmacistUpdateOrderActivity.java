@@ -39,15 +39,15 @@ public class PharmacistUpdateOrderActivity extends AppCompatActivity implements 
 
         //getting values from intent which was put into it in last activity(On the way order activity(adapter))
         Intent new_intent= getIntent();
-        final String drug_name=new_intent.getStringExtra("drugname");
-        final int order_price=new_intent.getIntExtra("drugprice",0);
-        final int order_qnty=new_intent.getIntExtra("qnty",0);
-        final int order_id=new_intent.getIntExtra("id",0);
+        final String drug_name = new_intent.getStringExtra("drugname");
+        final int order_price = new_intent.getIntExtra("drugprice",0);
+        final int order_qnty = new_intent.getIntExtra("qnty",0);
+        final int order_id = new_intent.getIntExtra("id",0);
         //final String drug_status=intent.getStringExtra("status");
-        final String order_email=new_intent.getStringExtra("email");
-        final int order_total=new_intent.getIntExtra("total",0);
-        final String order_date=new_intent.getStringExtra("date");
-        final String order_unit=new_intent.getStringExtra("unit");
+        final String order_email = new_intent.getStringExtra("email");
+        final int order_total = new_intent.getIntExtra("total",0);
+        final String order_date = new_intent.getStringExtra("date");
+        final String order_unit = new_intent.getStringExtra("unit");
 
         updated_textview=findViewById(R.id.updated_text_view);
         delivered_textview=findViewById(R.id.delivered_textview);
@@ -57,6 +57,8 @@ public class PharmacistUpdateOrderActivity extends AppCompatActivity implements 
         update_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
+
+                String status="Delivered";
 
                 //this obj will be used to update order
                 Order order = new Order();
@@ -71,7 +73,6 @@ public class PharmacistUpdateOrderActivity extends AppCompatActivity implements 
                 order.setId(order_id);
 
                 //updating status to delivered on click
-                String status="Delivered";
                 order.setStatus(status);
 
 

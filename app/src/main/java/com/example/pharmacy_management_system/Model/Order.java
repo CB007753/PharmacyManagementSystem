@@ -1,5 +1,8 @@
 package com.example.pharmacy_management_system.Model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Order {
 
     private int id;
@@ -12,6 +15,8 @@ public class Order {
 
     private int price;
 
+    @SerializedName("quantity")
+    @Expose
     private int quantity;
 
     private String unit;

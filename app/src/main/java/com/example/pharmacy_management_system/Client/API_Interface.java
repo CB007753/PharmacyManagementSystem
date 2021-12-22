@@ -34,6 +34,10 @@ public interface API_Interface {
     @POST("User/placeorder")
     Call<Void> PlaceOrder(@Body OrderDTO orderDTO);
 
+    //this will find and get all the orders with status "Delivered", this is used to display all stocks in pharmacy in home page.
+    @GET("User/ordersinstock/{status}")
+    Call<List<Order>> getDeliveredOrders(@Path("status")String status);
+
     @GET("User/onthewayorders/{email}/{status}")
     Call<List<Order>> ViewOnTheWayOrders(@Path("email")String username, @Path("status")String status);
 

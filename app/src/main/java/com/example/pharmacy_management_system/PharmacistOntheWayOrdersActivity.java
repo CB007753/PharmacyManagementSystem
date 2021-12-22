@@ -49,6 +49,7 @@ public class PharmacistOntheWayOrdersActivity extends AppCompatActivity implemen
         String status= "On The Way";//this will be used to search on the way orders
 
         api_interface = Backend_API.getRetrofit().create(API_Interface.class);
+
         Call<List<Order>> call=api_interface.ViewOnTheWayOrders(email,status);
         call.enqueue(new Callback<List<Order>>() {
             @Override
@@ -56,11 +57,21 @@ public class PharmacistOntheWayOrdersActivity extends AppCompatActivity implemen
 
 
                 try{
-                    Toast.makeText(PharmacistOntheWayOrdersActivity.this,"On The Way Orders Displayed Successfully!",Toast.LENGTH_LONG).show();
 
-                    orderList= new ArrayList<>(response.body());
-                    onTheWayOrderAdapter =new OnTheWayOrderAdapter(orderList,PharmacistOntheWayOrdersActivity.this);
-                    recyclerView.setAdapter(onTheWayOrderAdapter);
+                    if(response.isSuccessful()) {
+
+                        Toast.makeText(PharmacistOntheWayOrdersActivity.this, "On The Way Orders Displayed Successfully!", Toast.LENGTH_LONG).show();
+
+                        orderList = new ArrayList<>(response.body());
+                        onTheWayOrderAdapter = new OnTheWayOrderAdapter(orderList, PharmacistOntheWayOrdersActivity.this);
+                        recyclerView.setAdapter(onTheWayOrderAdapter);
+                    }
+                    else
+                    {
+
+                        Toast.makeText(PharmacistOntheWayOrdersActivity.this, "Response Not Successful !", Toast.LENGTH_LONG).show();
+
+                    }
 
                 }
                 catch(Exception e)
