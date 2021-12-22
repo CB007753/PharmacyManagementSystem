@@ -16,7 +16,10 @@
         >
 
 
-
+        <activity
+            android:name=".PharmacistViewProfileActivity"
+            android:label="Profile"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PharmacistUpdateOrderActivity"
             android:label="Delivery Confirmation"

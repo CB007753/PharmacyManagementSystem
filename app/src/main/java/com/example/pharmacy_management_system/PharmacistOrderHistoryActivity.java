@@ -130,8 +130,8 @@ public class PharmacistOrderHistoryActivity extends AppCompatActivity implements
             case R.id.navigation_ontheway_orders:
                 startActivity(new Intent(PharmacistOrderHistoryActivity.this,PharmacistOntheWayOrdersActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
-            case R.id.navigation_completed_orders:
-                startActivity(new Intent(PharmacistOrderHistoryActivity.this,PharmacistOrderHistoryActivity.class).putExtra("email",getIntent().getStringExtra("email")));
+            case R.id.navigation_profile:
+                startActivity(new Intent(PharmacistOrderHistoryActivity.this,PharmacistViewProfileActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
             case R.id.navigation_logout:
                 startActivity(new Intent(PharmacistOrderHistoryActivity.this,LoginActivity.class));

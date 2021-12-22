@@ -6,6 +6,7 @@ import com.example.pharmacy_management_system.Model.Drugs;
 import com.example.pharmacy_management_system.Model.Order;
 import com.example.pharmacy_management_system.Model.OrderDTO;
 import com.example.pharmacy_management_system.Model.RegistrationDTO;
+import com.example.pharmacy_management_system.Model.User;
 
 import java.util.List;
 
@@ -47,6 +48,9 @@ public interface API_Interface {
     @POST("User/updateorder")
     Call<Void> update_Order(@Body Order order);
 
+    //this will find and get all details of user linked with provided email. used for view profile function
+    @GET("User/finduser/{email}")
+    Call<User> getUserByEmail(@Path("email")String username);
 
 
 }

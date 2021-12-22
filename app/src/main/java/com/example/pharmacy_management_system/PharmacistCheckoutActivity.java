@@ -187,6 +187,9 @@ public class PharmacistCheckoutActivity extends AppCompatActivity implements Nav
             case R.id.navigation_completed_orders:
                 startActivity(new Intent(PharmacistCheckoutActivity.this,PharmacistOrderHistoryActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
+            case R.id.navigation_profile:
+                startActivity(new Intent(PharmacistCheckoutActivity.this,PharmacistViewProfileActivity.class).putExtra("email",getIntent().getStringExtra("email")));
+                break;
             case R.id.navigation_logout:
                 startActivity(new Intent(PharmacistCheckoutActivity.this,LoginActivity.class));
                 break;

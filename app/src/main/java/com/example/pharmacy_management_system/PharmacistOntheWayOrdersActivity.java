@@ -126,11 +126,11 @@ public class PharmacistOntheWayOrdersActivity extends AppCompatActivity implemen
             case R.id.navigation_contact:
                 startActivity(new Intent(PharmacistOntheWayOrdersActivity.this,PharmacistContactActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
-            case R.id.navigation_ontheway_orders:
-                startActivity(new Intent(PharmacistOntheWayOrdersActivity.this,PharmacistOntheWayOrdersActivity.class).putExtra("email",getIntent().getStringExtra("email")));
-                break;
             case R.id.navigation_completed_orders:
                 startActivity(new Intent(PharmacistOntheWayOrdersActivity.this,PharmacistOrderHistoryActivity.class).putExtra("email",getIntent().getStringExtra("email")));
+                break;
+            case R.id.navigation_profile:
+                startActivity(new Intent(PharmacistOntheWayOrdersActivity.this,PharmacistViewProfileActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
             case R.id.navigation_logout:
                 startActivity(new Intent(PharmacistOntheWayOrdersActivity.this,LoginActivity.class));

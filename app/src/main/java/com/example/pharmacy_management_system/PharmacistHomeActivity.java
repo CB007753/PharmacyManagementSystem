@@ -184,6 +184,9 @@ public class PharmacistHomeActivity extends AppCompatActivity implements Navigat
             case R.id.navigation_completed_orders:
                 startActivity(new Intent(PharmacistHomeActivity.this,PharmacistOrderHistoryActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
+            case R.id.navigation_profile:
+                startActivity(new Intent(PharmacistHomeActivity.this,PharmacistViewProfileActivity.class).putExtra("email",getIntent().getStringExtra("email")));
+                break;
             case R.id.navigation_logout:
                 startActivity(new Intent(PharmacistHomeActivity.this,LoginActivity.class));
                 break;

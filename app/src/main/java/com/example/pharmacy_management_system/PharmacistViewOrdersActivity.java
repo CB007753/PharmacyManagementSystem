@@ -1,5 +1,6 @@
 package com.example.pharmacy_management_system;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -117,6 +118,7 @@ public class PharmacistViewOrdersActivity  extends AppCompatActivity implements 
             return 0;
         }
 
+        @SuppressLint("SetTextI18n")
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -190,9 +192,6 @@ public class PharmacistViewOrdersActivity  extends AppCompatActivity implements 
             case R.id.navigation_home:
                 startActivity(new Intent(PharmacistViewOrdersActivity.this,PharmacistHomeActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
-            case R.id.navigation_orders:
-                startActivity(new Intent(PharmacistViewOrdersActivity.this,PharmacistViewOrdersActivity.class).putExtra("email",getIntent().getStringExtra("email")));
-                break;
             case R.id.navigation_contact:
                 startActivity(new Intent(PharmacistViewOrdersActivity.this,PharmacistContactActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
@@ -201,6 +200,9 @@ public class PharmacistViewOrdersActivity  extends AppCompatActivity implements 
                 break;
             case R.id.navigation_completed_orders:
                 startActivity(new Intent(PharmacistViewOrdersActivity.this,PharmacistOrderHistoryActivity.class).putExtra("email",getIntent().getStringExtra("email")));
+                break;
+            case R.id.navigation_profile:
+                startActivity(new Intent(PharmacistViewOrdersActivity.this,PharmacistViewProfileActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
             case R.id.navigation_logout:
                 startActivity(new Intent(PharmacistViewOrdersActivity.this,LoginActivity.class));

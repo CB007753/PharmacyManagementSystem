@@ -161,6 +161,9 @@ public class PharmacistUpdateOrderActivity extends AppCompatActivity implements 
             case R.id.navigation_completed_orders:
                 startActivity(new Intent(PharmacistUpdateOrderActivity.this,PharmacistOrderHistoryActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
+            case R.id.navigation_profile:
+                startActivity(new Intent(PharmacistUpdateOrderActivity.this,PharmacistViewProfileActivity.class).putExtra("email",getIntent().getStringExtra("email")));
+                break;
             case R.id.navigation_logout:
                 startActivity(new Intent(PharmacistUpdateOrderActivity.this,LoginActivity.class));
                 break;

@@ -60,14 +60,14 @@ public class PharmacistContactActivity extends AppCompatActivity implements Navi
             case R.id.navigation_orders:
                 startActivity(new Intent(PharmacistContactActivity.this,PharmacistViewOrdersActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
-            case R.id.navigation_contact:
-                startActivity(new Intent(PharmacistContactActivity.this,PharmacistContactActivity.class).putExtra("email",getIntent().getStringExtra("email")));
-                break;
             case R.id.navigation_ontheway_orders:
                 startActivity(new Intent(PharmacistContactActivity.this,PharmacistOntheWayOrdersActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
             case R.id.navigation_completed_orders:
                 startActivity(new Intent(PharmacistContactActivity.this,PharmacistOrderHistoryActivity.class).putExtra("email",getIntent().getStringExtra("email")));
+                break;
+            case R.id.navigation_profile:
+                startActivity(new Intent(PharmacistContactActivity.this,PharmacistViewProfileActivity.class).putExtra("email",getIntent().getStringExtra("email")));
                 break;
             case R.id.navigation_logout:
                 startActivity(new Intent(PharmacistContactActivity.this,LoginActivity.class));
