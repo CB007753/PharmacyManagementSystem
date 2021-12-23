@@ -2,6 +2,7 @@ package com.example.pharmacy_management_system.Client;
 
 import com.example.pharmacy_management_system.JsonResponse.LoginRespo;
 import com.example.pharmacy_management_system.Model.BuyDrugs;
+import com.example.pharmacy_management_system.Model.ContactDTO;
 import com.example.pharmacy_management_system.Model.Drugs;
 import com.example.pharmacy_management_system.Model.Order;
 import com.example.pharmacy_management_system.Model.OrderDTO;
@@ -53,13 +54,16 @@ public interface API_Interface {
     @GET("User/finduser/{email}")
     Call<User> getUserByEmail(@Path("email")String username);
 
-    //does nnot work
+    //does not work
     @HTTP(method = "DELETE", path = "User/deleteorder", hasBody = true)
     Call<Void> DeleteOrder(@Body OrderDTO orderDTO);
 
     // works perfectly if id provided correctly
     @GET("User/deletedrug/{id}")
     Call<Order> DeleteOrderByID(@Path("id")Long id);
+
+    @POST("User/addmessage")
+    Call<Void> SendMessage(@Body ContactDTO contactDTO);
 
 
 }

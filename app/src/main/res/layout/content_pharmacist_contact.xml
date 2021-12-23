@@ -10,6 +10,7 @@
 
 
     <TextView
+        android:id="@+id/user_contact_page_info_text_view"
         android:layout_width="378dp"
         android:layout_height="58dp"
         android:layout_alignParentRight="true"
@@ -17,6 +18,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="553dp"
         android:gravity="center"
+        android:textSize="20dp"
         android:text="Type your message which you need to send to the Admin"
         android:textAlignment="center"
         android:textStyle="bold" />
@@ -42,6 +44,43 @@
         android:backgroundTint="#00BFFF"
         android:text="Submit"
         android:textColor="#fff" />
+
+    <ImageView
+        android:id="@+id/msg_sent_image_view"
+        android:layout_width="320dp"
+        android:layout_height="349dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="56dp"
+        android:layout_marginBottom="216dp" />
+    <TextView
+        android:id="@+id/msg_sent_text_view"
+        android:layout_width="380dp"
+        android:layout_height="77dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="115dp"
+        android:gravity="center"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/user_contact_home_button"
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="82dp"
+        android:layout_marginBottom="55dp"
+        android:backgroundTint="#00FF7F"
+        android:text="Back to Home"
+        android:textColor="#fff"
+        android:textStyle="bold|italic"
+        android:layout_marginEnd="82dp" />
 
 
 </RelativeLayout>
