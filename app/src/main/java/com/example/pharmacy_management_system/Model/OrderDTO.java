@@ -49,6 +49,15 @@ public class OrderDTO implements Serializable {
         this.unit = unit;
     }
 
+    public OrderDTO(String email, String date, String drugname, int price, String unit, String status, int total) {
+        this.email = email;
+        this.date = date;
+        this.drugname = drugname;
+        this.price = price;
+        this.unit = unit;
+        this.status = status;
+        this.total = total;
+    }
 
     //Getters and setters
 

@@ -27,7 +27,7 @@ import retrofit2.Response;
 
 public class PharmacistUpdateOrderActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private API_Interface api_interface;
+    private API_Interface api_interface,api_interface_2;
     private TextView updated_textview,delivered_textview;
     private Button update_Btn,home_Btn;
     private ImageView updated_imageview;
@@ -43,7 +43,7 @@ public class PharmacistUpdateOrderActivity extends AppCompatActivity implements 
         final int order_price = new_intent.getIntExtra("drugprice",0);
         final int order_qnty = new_intent.getIntExtra("qnty",0);
         final int order_id = new_intent.getIntExtra("id",0);
-        //final String drug_status=intent.getStringExtra("status");
+        final String drug_status=new_intent.getStringExtra("status");
         final String order_email = new_intent.getStringExtra("email");
         final int order_total = new_intent.getIntExtra("total",0);
         final String order_date = new_intent.getStringExtra("date");
@@ -58,11 +58,37 @@ public class PharmacistUpdateOrderActivity extends AppCompatActivity implements 
             @Override
             public void onClick(final View v) {
 
+                // Deleting
+
+           // deletes perfectly if the id is provided, here the id is always returning 0, if hard coded the dlt_id to a number that number linked row will be deleted
+                Long dlt_id = (long) order_id;
+
+                api_interface_2 = Backend_API.getRetrofit().create(API_Interface.class);
+                Call<Order> cal = api_interface_2.DeleteOrderByID(dlt_id);
+                cal.enqueue(new Callback<Order>() {
+                    @Override
+                    public void onResponse(Call<Order> call, Response<Order> response) {
+                        //Toast.makeText(PharmacistUpdateOrderActivity.this, "Order Deleted !", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Order> call, Throwable t) {
+                        //Toast.makeText(PharmacistUpdateOrderActivity.this, "Order Not Deleted !", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+
+////----------------------------------------------------------------------------------
+                // updating(saving)
+
                 String status="Delivered";
 
                 //this obj will be used to update order
                 Order order = new Order();
 
+                order.setId(order_id);
                 order.setDrugname(drug_name);
                order.setPrice(order_price);
                 order.setQuantity(order_qnty);
@@ -70,7 +96,6 @@ public class PharmacistUpdateOrderActivity extends AppCompatActivity implements 
                 order.setDate(order_date);
                 order.setUnit(order_unit);
                 order.setEmail(order_email);
-                order.setId(order_id);
 
                 //updating status to delivered on click
                 order.setStatus(status);
@@ -89,6 +114,8 @@ public class PharmacistUpdateOrderActivity extends AppCompatActivity implements 
 
                         //hides the update button
                         update_Btn.setVisibility(View.GONE);
+
+
                     }
 
                     @Override
