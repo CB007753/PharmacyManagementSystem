@@ -61,39 +61,47 @@ public class PharmacistContactActivity extends AppCompatActivity implements Navi
             @Override
             public void onClick(View v) {
 
-                ContactDTO contactDTO=new ContactDTO();
+                if(message_edittext.getText().toString().isEmpty()){
 
-                contactDTO.setMessage(message_edittext.getText().toString());
-                contactDTO.setDate(DateandTime);
-                contactDTO.setEmail(email);
+                    Toast.makeText(PharmacistContactActivity.this, "Your Message is Empty !", Toast.LENGTH_SHORT).show();
+                }
+                else {
 
-                api_interface = Backend_API.getRetrofit().create(API_Interface.class);
+                    ContactDTO contactDTO=new ContactDTO();
 
-                Call<Void> call =api_interface.SendMessage(contactDTO);
-                call.enqueue(new Callback<Void>() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
+                    contactDTO.setMessage(message_edittext.getText().toString());
+                    contactDTO.setDate(DateandTime);
+                    contactDTO.setEmail(email);
 
-                        Toast.makeText(PharmacistContactActivity.this, "Message Sent To Admin !", Toast.LENGTH_SHORT).show();
+                    api_interface = Backend_API.getRetrofit().create(API_Interface.class);
 
-                        msg_sent_text_view.setText("Message Sent Successfully !");
-                        msg_sent_img_view.setImageResource(R.drawable.msg_sent);
+                    Call<Void> call =api_interface.SendMessage(contactDTO);
+                    call.enqueue(new Callback<Void>() {
+                        @SuppressLint("SetTextI18n")
+                        @Override
+                        public void onResponse(Call<Void> call, Response<Void> response) {
 
-                        //hides the button,edittext and text view
-                        submit_Btn.setVisibility(View.GONE);
-                        message_edittext.setVisibility(View.GONE);
-                        page_info_txt_view.setVisibility(View.GONE);
-                    }
+                            Toast.makeText(PharmacistContactActivity.this, "Message Sent To Admin !", Toast.LENGTH_SHORT).show();
 
-                    @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
+                            msg_sent_text_view.setText("Message Sent Successfully !");
+                            msg_sent_img_view.setImageResource(R.drawable.msg_sent);
 
-                        Toast.makeText(PharmacistContactActivity.this, "Message failed to send !", Toast.LENGTH_LONG).show();
+                            //hides the button,edittext and text view
+                            submit_Btn.setVisibility(View.GONE);
+                            message_edittext.setVisibility(View.GONE);
+                            page_info_txt_view.setVisibility(View.GONE);
+                        }
 
-                    }
-                });
-            }
+                        @Override
+                        public void onFailure(Call<Void> call, Throwable t) {
+
+                            Toast.makeText(PharmacistContactActivity.this, "Message failed to send !", Toast.LENGTH_LONG).show();
+
+                        }
+                    });
+                }//end of else
+
+            }//end of submit button on click
         });
 
         try {

@@ -59,25 +59,27 @@ public class PharmacistUpdateOrderActivity extends AppCompatActivity implements 
             public void onClick(final View v) {
 
                 // Deleting
-
-           // deletes perfectly if the id is provided, here the id is always returning 0, if hard coded the dlt_id to a number that number linked row will be deleted
-                Long dlt_id = (long) order_id;
-
-                api_interface_2 = Backend_API.getRetrofit().create(API_Interface.class);
-                Call<Order> cal = api_interface_2.DeleteOrderByID(dlt_id);
-                cal.enqueue(new Callback<Order>() {
-                    @Override
-                    public void onResponse(Call<Order> call, Response<Order> response) {
-                        //Toast.makeText(PharmacistUpdateOrderActivity.this, "Order Deleted !", Toast.LENGTH_SHORT).show();
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<Order> call, Throwable t) {
-                        //Toast.makeText(PharmacistUpdateOrderActivity.this, "Order Not Deleted !", Toast.LENGTH_SHORT).show();
-
-                    }
-                });
+                //Tried using this function because of update function saves the details in a new row- result: delete function works perfectly but order id is not passed -
+                //- to the long order_id variable correctly so delete function is useless here.
+//
+//           // deletes perfectly if the id is provided, here the id is always returning 0, if hard coded the dlt_id to a number that number linked row will be deleted
+//                Long dlt_id = (long) order_id;
+//
+//                api_interface_2 = Backend_API.getRetrofit().create(API_Interface.class);
+//                Call<Order> cal = api_interface_2.DeleteOrderByID(dlt_id);
+//                cal.enqueue(new Callback<Order>() {
+//                    @Override
+//                    public void onResponse(Call<Order> call, Response<Order> response) {
+//                        //Toast.makeText(PharmacistUpdateOrderActivity.this, "Order Deleted !", Toast.LENGTH_SHORT).show();
+//
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<Order> call, Throwable t) {
+//                        //Toast.makeText(PharmacistUpdateOrderActivity.this, "Order Not Deleted !", Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                });
 
 
 ////----------------------------------------------------------------------------------
