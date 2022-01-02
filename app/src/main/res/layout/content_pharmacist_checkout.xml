@@ -96,7 +96,7 @@
             android:layout_marginBottom="104dp"
             android:background="@drawable/shapes"
             android:gravity="center"
-            android:hint="Quantity (Max 99)"
+            android:hint="Quantity (Max 100)"
             android:inputType="number"
             android:textAlignment="center" />
 

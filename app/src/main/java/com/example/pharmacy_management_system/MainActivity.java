@@ -1,12 +1,14 @@
 package com.example.pharmacy_management_system;
 
 //splash screen coding and redirection will be coded here
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.content.Intent;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+//this activity will handle the very opening of the application
+//splash screen coding
 public class MainActivity extends AppCompatActivity {
 
     Handler handler;
