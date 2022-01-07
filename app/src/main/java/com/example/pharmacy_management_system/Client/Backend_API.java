@@ -18,7 +18,7 @@ public class Backend_API {
                     .create();
 
             retrofit=new Retrofit.Builder()
-                    .baseUrl("http://192.168.8.158:8080/api/mobile/") //192.168.8.158 is localhost IPv4 address of my wifi
+                    .baseUrl("http://192.168.8.158:8080/pharma/api/mobile/") //192.168.8.158 is localhost IPv4 address of my wifi
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
         }
