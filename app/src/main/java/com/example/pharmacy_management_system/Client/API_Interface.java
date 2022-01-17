@@ -14,7 +14,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.HTTP;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
@@ -53,10 +52,6 @@ public interface API_Interface {
     //this will find and get all details of user linked with provided email. used for view profile function
     @GET("User/finduser/{email}")
     Call<User> getUserByEmail(@Path("email")String username);
-
-    //does not work
-    @HTTP(method = "DELETE", path = "User/deleteorder", hasBody = true)
-    Call<Void> DeleteOrder(@Body OrderDTO orderDTO);
 
     // works perfectly if id provided correctly
     @GET("User/deletedrug/{id}")
