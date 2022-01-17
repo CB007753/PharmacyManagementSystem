@@ -14,6 +14,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.HTTP;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
@@ -60,5 +61,8 @@ public interface API_Interface {
     @POST("User/addmessage")
     Call<Void> SendMessage(@Body ContactDTO contactDTO);
 
+    //not used(previously used in Update OrderActivity)
+    @HTTP(method = "DELETE", path = "User/deleteorder", hasBody = true)
+    Call<Void> DeleteOrder(@Body OrderDTO orderDTO);
 
 }
